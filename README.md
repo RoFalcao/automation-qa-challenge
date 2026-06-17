@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Automatizar cenários WEB e API utilizando Cypress, Cucumber e JavaScript, conforme especificado no desafio técnico.
+Implementar a automação dos cenários WEB e API utilizando Cypress, Cucumber e JavaScript, conforme especificado no desafio técnico.
 
 ---
 
@@ -20,7 +20,7 @@ Automatizar cenários WEB e API utilizando Cypress, Cucumber e JavaScript, confo
 Clone o repositório:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/RoFalcao/automation-qa-challenge.git
 ```
 
 Acesse a pasta do projeto:
@@ -39,13 +39,13 @@ npm install
 
 ## Execução dos Testes
 
-Executar em modo interativo:
+Executar via interface do Cypress:
 
 ```bash
 npm run cy:open
 ```
 
-Executar em modo headless:
+Executar via terminal:
 
 ```bash
 npm run cy:run
@@ -77,13 +77,16 @@ Validar que um usuário autenticado consegue pesquisar um produto, adicioná-lo 
 
 **Endpoint:**
 
+```http
 GET https://api.trello.com/1/actions/592f11060f95a3d3d46a987a
+```
 
 **Validações realizadas:**
 
 * Status Code 200
 * Existência do campo `data.list.name`
 * Validação do valor retornado: `Professional`
+* Exibição do conteúdo solicitado pelo desafio
 
 ---
 
@@ -103,6 +106,7 @@ automation-qa-challenge
 │       ├── step_definitions
 │       │   ├── compra.steps.js
 │       │   └── trello.steps.js
+│       │
 │       └── e2e.js
 │
 ├── evidencias
@@ -115,7 +119,25 @@ automation-qa-challenge
 ├── package-lock.json
 └── README.md
 ```
+---
 
-## Evidências
+## Evidências de Execução dos Testes
 
-As evidências da execução dos testes podem ser encontradas na pasta `/evidencias`.
+### WEB - Fluxo de Compra
+**Comando utilizado**
+npm run cy:open
+
+![Fluxo WEB](./evidencias/web-checkout-success.png)
+
+### API - Consulta Trello
+**Comando utilizado**
+npm run cy:open
+
+![Fluxo API](./evidencias/api-trello-success.png)
+
+### Observações
+
+As evidências apresentadas correspondem à execução bem-sucedida dos cenários automatizados WEB e API implementados para este desafio.
+
+
+
